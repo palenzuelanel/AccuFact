@@ -27,11 +27,10 @@ public class mainProgScreen extends javax.swing.JFrame {
         mpTitlePanel = new javax.swing.JPanel();
         mpTitle = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
+        userPastingArea = new javax.swing.JTextArea();
+        analyzeButton = new javax.swing.JButton();
+        cabinetIcon = new javax.swing.JLabel();
         mpGradientBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -53,27 +52,28 @@ public class mainProgScreen extends javax.swing.JFrame {
 
         jPanel1.add(mpTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 810, 50));
 
-        jCheckBox1.setText("I agree to the terms and conditions");
-        jCheckBox1.setOpaque(false);
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        userPastingArea.setColumns(20);
+        userPastingArea.setLineWrap(true);
+        userPastingArea.setRows(5);
+        userPastingArea.setToolTipText("Paste your article here");
+        userPastingArea.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 153, 153)));
+        userPastingArea.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(userPastingArea);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 660, 270));
+
+        analyzeButton.setBackground(new java.awt.Color(0, 153, 153));
+        analyzeButton.setText("AccuFact it!");
+        analyzeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                analyzeButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 230, -1));
+        jPanel1.add(analyzeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 360, 160, 80));
 
-        jButton3.setText("AccuFact it!");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 160, 80));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 86, 450, 270));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Palenzuela\\Desktop\\GUI Photo Source\\cabinet-2027377_640.png")); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, -10, 580, 680));
+        cabinetIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Palenzuela\\Desktop\\GUI Photo Source\\cabinet-2027377_640.png")); // NOI18N
+        cabinetIcon.setText("jLabel1");
+        jPanel1.add(cabinetIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 580, 680));
 
         mpGradientBackground.setIcon(new javax.swing.ImageIcon("C:\\Users\\Palenzuela\\Desktop\\GUI Photo Source\\Gradient-Free-Blurry-Abstract-Background-Photos.png")); // NOI18N
         mpGradientBackground.setText("jLabel1");
@@ -84,24 +84,25 @@ public class mainProgScreen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
+    private void analyzeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analyzeButtonActionPerformed
+       this.hide();
+       loadScreen ls = new loadScreen();
+       ls.setVisible(true);
+    }//GEN-LAST:event_analyzeButtonActionPerformed
+    
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
+    public javax.swing.JButton analyzeButton;
+    private javax.swing.JLabel cabinetIcon;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel mpGradientBackground;
     private javax.swing.JLabel mpTitle;
     private javax.swing.JPanel mpTitlePanel;
+    private javax.swing.JTextArea userPastingArea;
     // End of variables declaration//GEN-END:variables
 }
